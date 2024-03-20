@@ -1,0 +1,205 @@
+@font-face {
+    font-family: KaiseiTokumin;
+    src: url(fonts/KaiseiTokumin-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'KaiseiTokumin';
+    background-color: rgb(242, 246, 250);
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
+
+}
+
+h1 {
+    font-size: 3rem;
+    width: 100%;
+    line-height: 3.5rem;
+}
+
+
+
+.section_nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.section_nav nav {
+    display: flex;
+    gap: 1.3rem;
+}
+
+.section_nav logo_nav a{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #5c48ee;
+}
+
+.section_nav nav li a{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333333;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.section_nav nav li a.active{
+    background-color: #5c48ee;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0.5rem 2rem;
+}
+
+.section_nav nav li a.active:hover{
+    background-color: #0f1e6a;
+}
+
+
+.section_nav nav li:not(:last-child) a:hover{
+    color: #5c48ee;
+}
+
+
+
+.section_content_header{
+
+    min-height: calc(100vh - 100px);
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    max-width: 1200px;
+    margin: auto;
+    gap: 5rem
+    ;
+}
+
+.right_content_header {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+    place-content: center;
+}
+
+.left_content_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.left_content_header h1 span:nth-child(1) {
+    font-weight: 100;
+    color: #0f1e6a;
+
+}
+
+.left_content_header h1 span:nth-child(3) {
+    font-weight: 700;
+    color: #0f1e6a;
+}
+
+.left_content_header h1 span:nth-child(5) {
+    color: #5c48ee;
+}
+
+.left_content_header p {
+    margin: 1.5rem 0;
+    color: #333333;
+}
+
+.left_content_header form {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.left_content_header form input {
+    border: none;
+    background-color: #fff;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    font-size: 0.8rem;
+    max-width: 500px;
+    width: 300px;
+    outline: none;
+}
+
+.left_content_header form button {
+    border: none;
+    background-color: #5c48ee;
+    color: #fff;
+    padding: 1rem;
+    white-space: nowrap;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.right_content_header img:first-child{
+    transform: translateY(70px);
+}
+
+.right_content_header .content_img_text {
+    background: linear-gradient(to right , rgba(92,72,238,0.6),rgba(15,30,106,0.4));
+    backdrop-filter: blur(30px);
+    color: #fff;
+    font-size: small;
+    padding: 1rem 2rem;
+    width: 100%;
+    max-width: 310px;
+    position: absolute;
+    top: 80%;
+    left: 70%;
+    transform: translate(-25%, -50%);
+    border-radius: 10px;
+}
+
+.right_content_header .content_img_text ul li {
+    margin-bottom: 0.5rem;
+    list-style: disc;
+}
+
+
+/* ==================Responsive================= */
+
+@media screen and (max-width:999px){
+    .section_nav{
+        display: none;
+    }
+    .section_content_header{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .left_content_header{
+        text-align: center;
+    }
+    .left_content_header form{
+        justify-content: center;
+    }
+    .right_content_header img:first-child{
+        transform: translateY(0px);
+    }
+    .content_img_text{
+        display: none;
+    }
+}
